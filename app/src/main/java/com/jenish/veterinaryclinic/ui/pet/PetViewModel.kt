@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.jenish.veterinaryclinic.data.ConfigData
 import com.jenish.veterinaryclinic.data.PetRepository
 import com.jenish.veterinaryclinic.data.Resource
+import com.jenish.veterinaryclinic.testing.OpenForTesting
 import java.time.DayOfWeek
 import java.time.LocalDate
 import java.time.LocalTime
@@ -17,6 +18,7 @@ import java.util.*
 /**
  * Developed By JENISH KHANPARA on 18 June 2020.
  */
+@OpenForTesting
 class PetViewModel(petRepository: PetRepository) : ViewModel() {
 
     val configData: LiveData<Resource<ConfigData>> = petRepository.getConfig()

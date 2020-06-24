@@ -3,6 +3,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: 'kotlin-allopen'
+
+allOpen {
+    // allows mocking for classes w/o directly opening them for release builds
+    annotation 'com.jenish.veterinaryclinic.testing.OpenClass'
+}
 
 android {
     compileSdkVersion 29
@@ -63,6 +69,13 @@ dependencies {
 
     // testing
     testImplementation "junit:junit:$junitVersion"
+    testImplementation "org.mockito:mockito-core:$mockitoVersion"
+    testImplementation "androidx.arch.core:core-testing:$coreTesting"
+
+    //androidTestImplementation "androidx.test:core:$testCoreVersion"
+    //androidTestImplementation "androidx.test:runner:$runnerVersion"
+    //androidTestImplementation "androidx.test:rules:$rulesVersion"
+
     androidTestImplementation "androidx.test.ext:junit:$testExtVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
 }

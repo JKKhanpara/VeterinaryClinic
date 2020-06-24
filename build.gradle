@@ -1,15 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     ext {
-        // App version
-        versionName = '1.0'
-        versionCode = 1
-
-        // SDK and tools
-        compileSdkVersion = 29
-        minSdkVersion = 23
-        targetSdkVersion = 29
-
         // App dependencies
         androidGradlePluginVersion = '4.0.0'
         appcompatVersion = '1.1.0'
@@ -25,6 +16,13 @@ buildscript {
         okhttpVersion = "4.7.2"
         recyclerviewVersion = '1.1.0'
         testExtVersion = '1.1.1'
+        mockitoVersion = "3.3.3"
+        testCoreVersion = '1.0.0'
+        runnerVersion = '1.1.1'
+        rulesVersion = '1.1.1'
+        coreTesting = '2.1.0'
+
+
     }
     repositories {
         google()
@@ -34,6 +32,8 @@ buildscript {
         classpath "com.android.tools.build:gradle:$androidGradlePluginVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+        classpath "org.jetbrains.kotlin:kotlin-allopen:$kotlinVersion"
+
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

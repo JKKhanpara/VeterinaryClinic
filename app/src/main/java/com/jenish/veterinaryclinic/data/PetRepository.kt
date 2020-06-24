@@ -2,6 +2,7 @@ package com.jenish.veterinaryclinic.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.jenish.veterinaryclinic.testing.OpenForTesting
 import com.jenish.veterinaryclinic.ui.pet.Pet
 import com.jenish.veterinaryclinic.ui.pet.asPetList
 import okhttp3.*
@@ -11,6 +12,7 @@ import java.io.IOException
 /**
  * Developed By JENISH KHANPARA on 22 June 2020.
  */
+@OpenForTesting
 class PetRepository(private val okHttpClient: OkHttpClient) {
 
     fun getConfig(): LiveData<Resource<ConfigData>> {
